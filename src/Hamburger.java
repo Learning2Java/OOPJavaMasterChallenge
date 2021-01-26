@@ -5,11 +5,16 @@ public class Hamburger {
     private boolean tomato;
     private boolean onions;
     private boolean pickles;
+    private String additional1Name;
+    private String additional2Name;
+
     private double basePrice;
     private double lettucePrice;
     private double tomatoPrice;
     private double onionPrice;
     private double picklePrice;
+    private double additional1Price;
+    private double additional2Price;
 
     public Hamburger(String breadType, String meat, boolean lettuce, boolean tomato, boolean onions, boolean pickles) {
         this.breadType = breadType;
@@ -25,8 +30,17 @@ public class Hamburger {
         this.picklePrice = 0.10;
     }
 
+    public void setAdditional1Name(String name, double price) {
+        this.additional1Name = name;
+        this.additional1Price = price;
+    }
+
     public double orderTotal() {
         double price = basePrice;
+        if(additional1Name != null) {
+            System.out.println("adding " + additional1Name + " for a price of " + additional1Price);
+            price += additional1Price;
+        }
         System.out.println("Base hamburger price = " + basePrice);
         while(lettuce) {
             System.out.println("includes lettuce = " + lettucePrice);
