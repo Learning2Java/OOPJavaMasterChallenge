@@ -4,49 +4,61 @@ public class HamburgerBuilder {
     private String additional3Name;
     private String additional4Name;
 
+    private double additional1Price;
+    private double additional2Price;
+    private double additional3Price;
+    private double additional4Price;
 
-    public HamburgerBuilder name1(String name) {
+
+    public HamburgerBuilder name1Price(String name, double price) {
         this.additional1Name = name;
-        System.out.println("added " + name);
+        this.additional1Price = price;
+        System.out.println("added " + name + " and costs: " + price);
         return this;
     }
 
-    public HamburgerBuilder name2(String name) {
+    public HamburgerBuilder name2Price(String name, double price) {
         this.additional2Name = name;
-        System.out.println("added " + name);
+        this.additional2Price = price;
+        System.out.println("added " + name + " and costs: " + price);
         return this;
     }
 
-    public HamburgerBuilder name3(String name) {
+    public HamburgerBuilder name3Price(String name, double price) {
         this.additional3Name = name;
-        System.out.println("added " + name);
+        this.additional3Price = price;
+        System.out.println("added " + name + " and costs: " + price);
         return this;
     }
 
-    public HamburgerBuilder name4(String name) {
+    public HamburgerBuilder name4Price(String name, double price) {
         this.additional4Name = name;
-        System.out.println("added " + name);
+        this.additional4Price = price;
+        System.out.println("added " + name + " and costs: " + price);
         return this;
     }
 
- /*   public HamburgerFluent orderTotal() {
-        double price = basePrice;
-        if(additional1Name != null) {
-            System.out.println("adding " + additional1Name + " for a price of " + additional1Price);
+    public HamburgerBuilder orderTotal() {
+        double price = 0;
+        if (this.additional1Name != null) {
             price += additional1Price;
+            System.out.println("Current total with "+ additional1Name + " = " + price);
         }
-        if(additional2Name != null) {
-            System.out.println("adding " + additional2Name + " for a price of " + additional2Name);
+        if (this.additional2Name != null) {
             price += additional2Price;
+            System.out.println("Current total with "+ additional2Name + " = " + price);
         }
-        if(additional3Name != null) {
-            System.out.println("adding " + additional3Name + " for a price of " + additional3Name);
+        if (this.additional3Name != null) {
             price += additional3Price;
+            System.out.println("Current total with "+ additional3Name + " = " + price);
         }
-        if(additional4Name != null) {
-            System.out.println("adding " + additional4Name + " for a price of " + additional4Name);
+        if (this.additional4Name != null) {
             price += additional4Price;
-        }*/
+            System.out.println("Current total with "+ additional4Name + " = " + price);
+        }
+        return this;
+    }
+
     public HamburgerFluent build() {
 
         HamburgerFluent hamburgerFluent = new HamburgerFluent();

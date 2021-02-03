@@ -16,7 +16,13 @@ public class Main {
         deluxe.setLettuce(true);
         System.out.println(deluxe.orderTotal());*/
 
-        HamburgerFluent hamburger = new HamburgerBuilder().name1("daf").name2("adsf").name3("daf").name4("daf").build();
+        HamburgerFluent hamburger =
+                new HamburgerBuilder().name1Price("tomato", 3.12)
+                        .name2Price("cheese", 3.4)
+                        .name3Price("bacon", 4)
+                        .name4Price("avocado", 4)
+                        .orderTotal()
+                        .build();
 
 
 
